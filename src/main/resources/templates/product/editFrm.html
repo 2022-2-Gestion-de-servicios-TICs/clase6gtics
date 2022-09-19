@@ -12,22 +12,25 @@
                         <input th:field="*{id}" type="hidden"/>
                         <div class="mb-3">
                             <label class="form-label">Nombre del Producto</label>
-                            <input th:field="*{productname}" type="text" class="form-control"/>
+                            <input th:field="*{productname}" type="text" class="form-control"
+                                   th:classappend="${#fields.hasErrors('productname')?'is-invalid':'is-valid'}"/>
+                            <div class="invalid-feedback" th:if="${#fields.hasErrors('productname')}"
+                                 th:errors="*{productname}">
+                                Please choose a username.
+                            </div>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Proveedor</label>
-                            <select class="form-select" name="supplier">
+                            <select class="form-select" name="supplier" th:field="${product.supplier}">
                                 <option th:each="supplier : ${listaProveedores}" th:value="${supplier.id}"
-                                        th:text="${supplier.companyname}"
-                                        th:selected="${supplier.id == product.supplier.id}"></option>
+                                        th:text="${supplier.companyname}"></option>
                             </select>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Categoría</label>
-                            <select class="form-select" name="category">
+                            <select class="form-select" name="category" th:field="${product.category}">
                                 <option th:each="categoria : ${listaCategorias}" th:value="${categoria.id}"
-                                        th:text="${categoria.categoryname}"
-                                        th:selected="${categoria.id == product.category.id}"></option>
+                                        th:text="${categoria.categoryname}"></option>
                             </select>
                         </div>
                         <div class="mb-3">
@@ -36,15 +39,30 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Precio unitario</label>
-                            <input th:field="*{unitprice}" type="text" class="form-control"/>
+                            <input th:field="*{unitprice}" type="text" class="form-control"
+                                   th:classappend="${#fields.hasErrors('unitprice')?'is-invalid':'is-valid'}"/>
+                            <div class="invalid-feedback" th:if="${#fields.hasErrors('unitprice')}"
+                                 th:errors="*{unitprice}">
+                                Please choose a username.
+                            </div>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Unidades en stock</label>
-                            <input th:field="*{unitsinstock}" type="number" class="form-control"/>
+                            <input th:field="*{unitsinstock}" type="number" class="form-control"
+                                   th:classappend="${#fields.hasErrors('unitsinstock')?'is-invalid':'is-valid'}"/>
+                            <div class="invalid-feedback" th:if="${#fields.hasErrors('unitsinstock')}"
+                                 th:errors="*{unitsinstock}">
+                                Please choose a username.
+                            </div>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Unidades ordenadas</label>
-                            <input th:field="*{unitsonorder}" type="number" class="form-control"/>
+                            <input th:field="*{unitsonorder}" type="text" class="form-control"
+                                   th:classappend="${#fields.hasErrors('unitsonorder')?'is-invalid':'is-valid'}"/>
+                            <div class="invalid-feedback" th:if="${#fields.hasErrors('unitsonorder')}"
+                                 th:errors="*{unitsonorder}">
+                                Please choose a username.
+                            </div>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Nivel de reorden</label>

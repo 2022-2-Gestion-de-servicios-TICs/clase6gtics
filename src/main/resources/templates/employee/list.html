@@ -33,9 +33,9 @@
                             <td th:if="${employee.manager !=null}"
                                 th:text="${employee.manager.firstname} + ' ' + ${employee.manager.lastname}"></td>
                             <td th:if="${employee.manager ==null}">Sin jefe</td>
-                            <td><a class="btn btn-primary" th:href="@{'/employee/edit' + '?id=' + ${employee.id}}">Editar</a>
+                            <td><a class="btn btn-primary" th:href="@{'/employee/edit?id=' + ${employee.id}}">Editar</a>
                             </td>
-                            <td><a class="btn btn-danger" th:href="@{'/employee/delete' + '?id=' + ${employee.id}}">Borrar</a>
+                            <td><a class="btn btn-danger" th:href="@{'/employee/delete?id=' + ${employee.id}}">Borrar</a>
                             </td>
                         </tr>
                     </tbody>

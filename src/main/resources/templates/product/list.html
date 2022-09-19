@@ -31,10 +31,10 @@
                             <td th:text="${product.unitsinstock}"></td>
                             <td th:text="${product.discontinued?'si':'no'}"></td>
                             <td><a class="btn btn-primary"
-                                   th:href="@{'/product/edit' + '?id=' + ${product.id}}">Editar</a>
+                                   th:href="@{'/product/edit?id=' + ${product.id}}">Editar</a>
                             </td>
                             <td><a class="btn btn-danger"
-                                   th:href="@{'/product/delete' + '?id=' + ${product.id}}">Borrar</a>
+                                   th:href="@{|/product/delete?id=${product.id}|}">Borrar</a>
                             </td>
                         </tr>
                     </tbody>
